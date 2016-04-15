@@ -1,0 +1,61 @@
+body {
+    font-family: sans-serif;
+    color: #333;
+}
+
+a.button {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background-color: rgb(150, 150, 150);
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a.button.connect {
+    background-color: rgb(0, 150, 136);
+}
+
+a.button.connect:hover {
+    background-color: rgb(0, 179, 162);
+}
+
+a.button.connect:active {
+    background-color: rgb(102, 204, 194);
+}
+
+a.button.connecting {
+    cursor: wait;
+}
+
+a.button.disconnect {
+    background-color: rgb(199, 26, 26);
+}
+
+a.button.disconnect:hover {
+    background-color: rgb(227, 54, 54);
+}
+
+a.button.disconnect:active {
+    background-color: rgb(255, 82, 82);
+}
+
+ul.users {
+    list-style-type: none;
+    width: 50%;
+    padding: 0;
+}
+
+ul.users li {
+    background-image: url("../images/avatar-32.png");
+    background-repeat: no-repeat;
+    color: #778899;
+    background-color: rgb(245, 249, 250);
+    border-color: #778899;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    line-height: 32px;
+    padding-left: 40px;
+    margin: 0.5em 0;
+}

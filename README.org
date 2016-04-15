@@ -1,0 +1,61 @@
+#+TITLE: Elm Application Exercise
+#+STARTUP: indent
+
+This is an exercise in creating a basic embedded Elm application that
+will react to user actions and fetch data from a JSON endpoint.
+
+
+An [[file:sample.html][HTML mockup]] is provided along with CSS and images.
+
+* Exercise: A Chat Service User List
+
+The exercise will be a user list application for a phony chat service.
+
+The application will have three states:
+- Offline
+- Connecting
+- Connected
+
+Two UI elements must be presented to the User:
+- A button to connect or disconnect
+- A list of online users
+
+** Requirements
+
+*** Behavior
+**** Offline
+- The application must start in an offline state
+- The button should appear in its "Connect" state while offline
+- Clicking the "Connect" button should progress the application to
+  its connecting state, and fetch the JSON user list.
+- The user list should be empty.
+**** Connecting
+- The button should appear in its "Connecting" state while connecting
+- When the user list has been fetched, the application should
+  progress to its connected state with a populated user list.
+**** Connected
+- The button should appear in its "Connect" state while online (user list is present)
+- The user list should be populated.
+- Clicking the "Disconnect" button should clear the user list and
+  progress the application to its offline state.
+*** Architecture
+- The Elm application should be embedded within an HTML file per
+  the mockup, loading within the =elm-app= div.
+- The Elm application should be built following the [[https://github.com/evancz/elm-architecture-tutorial][Elm
+  Architecture]] (using [[http://package.elm-lang.org/packages/evancz/start-app/2.0.2/StartApp][StartApp]]).
+- The user list should be fetched from the provided JSON file.
+
+** Hints
+- Be sure to reference the [[http://elm-lang.org/docs][official Elm documentation]] as well as the
+  [[http://www.elm-tutorial.org/][Elm tutorial]] to see how to build Elm application
+- The provided Makefile expects your main module to be in =./App.elm=,
+  and will output the compiled javascript for your application to
+  =./app.js=.
+- While the app is running within the Elm reactor via =make dev=,
+  assets will be available relative to the project's root directory.
+  E.g., you can include the css file as =/css/style.css=.
+- The external library [[http://package.elm-lang.org/packages/evancz/elm-http/3.0.0/][elm-http]] will be useful for making the request
+  to fetch the users JSON.
+- You may find it easier to build the widgets separately, and to
+  hard-code the various into your models before implementing your
+  click actions and HTTP request.
